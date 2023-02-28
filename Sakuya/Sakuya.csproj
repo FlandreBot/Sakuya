@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Flandre.Adapters.Konata" Version="2.0.0-alpha.2"/>
+        <PackageReference Include="Flandre.Framework" Version="1.0.0-alpha.3"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- 自动复制配置文件至输出目录 -->
+        <Content Include="**\*.json"
+                 Exclude="obj\**\*;bin\**\*"
+                 CopyToOutputDirectory="PreserveNewest"
+                 CopyToPublishDirectory="PreserveNewest"/>
+    </ItemGroup>
+
+</Project>
