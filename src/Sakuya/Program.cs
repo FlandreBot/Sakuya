@@ -3,6 +3,7 @@ using Flandre.Adapters.Konata;
 using Flandre.Framework;
 using Microsoft.Extensions.Hosting;
 using Sakuya;
+using Sakuya.Plugins;
 
 var builder = FlandreApp.CreateBuilder(args);
 
@@ -17,7 +18,9 @@ kntAdapterConfig.Bots.Add(new KonataBotConfig
 });
 builder.AddAdapter(new KonataAdapter(kntAdapterConfig));
 
-builder.AddPlugin<ExamplePlugin>();
+// 添加插件
+builder.AddPlugin<CommonPlugin>();
+builder.AddPlugin<MathPlugin>();
 
 var app = builder.Build();
 
