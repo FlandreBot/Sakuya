@@ -1,5 +1,7 @@
 ﻿<div align="center">
 
+<img src="https://ghproxy.com/https://raw.githubusercontent.com/FlandreDevs/Sakuya/dev/assets/avatar.jpg" width="200" />
+
 # Sakuya
 
 示例机器人，助你快速上手 [Flandre](https://github.com/FlandreDevs/Flandre) 开发
