@@ -1,6 +1,6 @@
 ﻿<div align="center">
 
-<img src="https://ghproxy.com/https://raw.githubusercontent.com/FlandreDevs/Sakuya/dev/assets/avatar.jpg" width="200" />
+<img src="https://ghproxy.com/https://raw.githubusercontent.com/FlandreDevs/Sakuya/main/assets/avatar.jpg" width="200" />
 
 # Sakuya
 
