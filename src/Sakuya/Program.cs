@@ -1,22 +1,18 @@
 ﻿using System.Text.Json;
-using Flandre.Adapters.Konata;
 using Flandre.Framework;
 using Microsoft.Extensions.Hosting;
 using Sakuya;
 using Sakuya.Plugins;
 
-var builder = FlandreApp.CreateBuilder(args);
-
-// 添加 Konata 适配器
-var kntDevice = KonataConfigManager.GetDevice();
-var kntAdapterConfig = new KonataAdapterConfig();
-kntAdapterConfig.Bots.Add(new KonataBotConfig
+var builder = FlandreApp.CreateBuilder(new HostApplicationBuilderSettings
 {
-    Konata = KonataConfigManager.GetConfig(),
-    Device = kntDevice,
-    KeyStore = KonataConfigManager.GetKeyStore()
+    Args = args,
+    ContentRootPath = AppDomain.CurrentDomain.BaseDirectory
 });
-builder.AddAdapter(new KonataAdapter(kntAdapterConfig));
+
+// 添加适配器
+// builder.AddKonataAdapter();
+builder.AddOneBotAdapter(builder.Configuration.GetSection("Adapters:OneBot"));
 
 // 添加插件
 builder.AddPlugin<CommonPlugin>();
@@ -33,10 +29,9 @@ app.OnReady += (_, _) =>
 {
     // 更新设备信息
     File.WriteAllText("konata-device.json",
-        JsonSerializer.Serialize(kntDevice, new JsonSerializerOptions
-        {
-            WriteIndented = true
-        }));
+        JsonSerializer.Serialize(
+            KonataAdapterFactory.DeviceInfo,
+            new JsonSerializerOptions { WriteIndented = true }));
 };
 
 app.Run();
