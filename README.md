@@ -11,7 +11,11 @@
 ---
 
 ## 概述
-使用 [Konata 适配器](https://github.com/FlandreDevs/Flandre/tree/dev/src/Flandre.Adapters.Konata)。
+使用 [OneBot 适配器](https://flandre.sorabs.cc/ecosystem/adapters/onebot.html)
+和 [Konata 适配器](https://github.com/FlandreDevs/Flandre/tree/dev/src/Flandre.Adapters.Konata)。
+
+## 指令
+- `square <int>` - 计算二次方
 
 ## 开源
 
