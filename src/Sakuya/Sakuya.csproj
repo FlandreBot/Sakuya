@@ -11,7 +11,7 @@
     <ItemGroup>
         <PackageReference Include="Flandre.Adapters.Konata" Version="2.0.0-alpha.5" />
         <PackageReference Include="Flandre.Adapters.OneBot" Version="2.0.0-alpha.3" />
-        <PackageReference Include="Flandre.Framework" Version="1.0.0-alpha.6" />
+        <PackageReference Include="Flandre.Framework" Version="1.0.0-alpha.7" />
     </ItemGroup>
 
     <ItemGroup>
