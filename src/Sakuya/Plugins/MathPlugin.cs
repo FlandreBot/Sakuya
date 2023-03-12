@@ -6,9 +6,9 @@ namespace Sakuya.Plugins;
 
 public sealed class MathPlugin : Plugin
 {
-    [Command("square")]
+    [Command]
     [RegexShortcut( /* lang=regex */ @"^([\+\-]?\d*)的二次方(是多少)?$", "$1")]
-    public MessageContent OnSquare(int num)
+    public MessageContent Square(int num)
     {
         return $"{num} 的二次方为 {Math.Pow(num, 2)}。";
     }
