@@ -6,9 +6,9 @@ namespace Sakuya;
 
 public static class OneBotAdapterFactory
 {
-    public static void AddOneBotAdapter(this FlandreAppBuilder builder, IConfiguration configuration)
+    public static void AddOneBot(this IAdapterCollection adapters, IConfiguration configuration)
     {
         var config = configuration.Get<OneBotAdapterConfig>();
-        builder.AddAdapter(new OneBotAdapter(config ?? new OneBotAdapterConfig()));
+        adapters.Add(new OneBotAdapter(config ?? new OneBotAdapterConfig()));
     }
 }

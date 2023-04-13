@@ -11,7 +11,7 @@ public static class KonataAdapterFactory
     public static BotDevice DeviceInfo { get; } = GetDevice();
     public static BotKeyStore KeyStore { get; } = GetKeyStore();
 
-    public static void AddKonataAdapter(this FlandreAppBuilder builder)
+    public static void AddKonata(this IAdapterCollection adapters)
     {
         var config = new KonataAdapterConfig();
         config.Bots.Add(new KonataBotConfig
@@ -20,7 +20,7 @@ public static class KonataAdapterFactory
             Device = DeviceInfo,
             KeyStore = KeyStore
         });
-        builder.AddAdapter(new KonataAdapter(config));
+        adapters.Add(new KonataAdapter(config));
     }
 
     private static T ReadOrCreateNew<T>(string file, Func<T> createNew)

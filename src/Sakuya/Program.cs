@@ -11,12 +11,12 @@ var builder = FlandreApp.CreateBuilder(new HostApplicationBuilderSettings
 });
 
 // 添加适配器
-// builder.AddKonataAdapter();
-builder.AddOneBotAdapter(builder.Configuration.GetSection("Adapters:OneBot"));
+// builder.Adapters.AddKonata();
+builder.Adapters.AddOneBot(builder.Configuration.GetSection("Adapters:OneBot"));
 
 // 添加插件
-builder.AddPlugin<CommonPlugin>();
-builder.AddPlugin<MathPlugin>();
+builder.Plugins.Add<CommonPlugin>();
+builder.Plugins.Add<MathPlugin>();
 
 var app = builder.Build();
 
